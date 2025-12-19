@@ -1,0 +1,226 @@
+.cropper-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cropper-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.cropper-area:active {
+    cursor: grabbing;
+}
+
+.zoom-pan-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    will-change: transform;
+}
+
+/* Ensure ReactCrop fits */
+.ReactCrop {
+    max-width: none;
+    max-height: none;
+}
+
+.crop-target {
+    padding: 1000px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ReactCrop img {
+    object-fit: contain;
+    display: block;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #1a1a1a;
+}
+
+
+/* Floating UI Layout */
+.floating-ui-container {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 100;
+    pointer-events: none;
+    padding: 0 1rem;
+}
+
+.floating-ui-container>* {
+    pointer-events: auto;
+}
+
+.controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    background-color: rgba(39, 39, 42, 0.8);
+    backdrop-filter: blur(12px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Aspect Ratio Controls */
+.aspect-controls {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0;
+}
+
+.dimension-controls {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.dimension-controls label {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.dim-input {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    width: 60px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.dim-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* Hide Spinners */
+.dim-input::-webkit-outer-spin-button,
+.dim-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.dim-input {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.aspect-btn {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.aspect-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+}
+
+.aspect-btn.active {
+    background-color: var(--primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.api-key-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.api-key-container label {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.api-key-container label a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.api-key-container label a:hover {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+
+.api-key-input {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+    width: 140px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.api-key-input:focus {
+    border-color: var(--primary);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

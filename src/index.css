@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Zinc palette (Charcoal) */
+  --bg-color: #18181b;
+  /* zinc-950 */
+  --card-bg: #27272a;
+  /* zinc-800 */
+  --text-main: #f4f4f5;
+  /* zinc-50 */
+  --text-muted: #a1a1aa;
+  /* zinc-400 */
+
+  /* Primary Brand */
+  --green: #14b8a6;
+  --primary: var(--green);
+  /* teal-500 */
+  --primary-light: #5eead4;
+  /* teal-300 */
+  --primary-hover: #0d9488;
+  /* teal-600 */
+
+  /* Borders & UI details */
+  --border: #3f3f46;
+  /* zinc-700 */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  /* Secondary Brand / Uncrop */
+  --purple: #8b5cf6;
+  --purple-hover: #7c3aed;
+}
+
+.uncrop-theme {
+  --primary: var(--purple);
+  --primary-light: #c4b5fd;
+  /* violet-300 */
+  --primary-hover: var(--purple-hover);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* Checkerboard Background */
+.checkerboard {
+  background-color: #1a1a1a;
+  background-image:
+    linear-gradient(45deg, #111 25%, transparent 25%),
+    linear-gradient(-45deg, #111 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #111 75%),
+    linear-gradient(-45deg, transparent 75%, #111 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 0 12px, 12px -12px, -12px 0px;
+}
